@@ -152,6 +152,10 @@
   font-weight: 400;
   font-size: 1.125rem;
 }
+
+.dayBar a {
+  text-decoration: underline;
+}
 .dayType {
   font-weight: 700;
   color: darkorange;
