@@ -12,27 +12,29 @@ type Day = {
 };
 
 const DaysConfig: Day[] = [
-  { 
-    day: 1, 
-    maker: "Solstice", 
-    bar: "Bolivia", 
-    type: "Dark Milk 56%", 
-    notes: "", 
-    purchaseURL:"https://www.solsticechocolate.com/shop/boliviamilk" 
+  {
+    day: 1,
+    maker: "Solstice",
+    bar: "Bolivia",
+    type: "Dark Milk 56%",
+    notes: "",
+    purchaseURL: "https://www.solsticechocolate.com/shop/boliviamilk",
   },
   {
     day: 2,
     maker: "Monsoon",
     bar: "Uganda Semiliki Forest 73%",
     notes: "Monsoon is a chocolate maker from Tucson, Ariz.",
-    purchaseURL:"https://monsoonchocolate.square.site/product/semuliki-forest-uganda-74-dark-chocolate/101?cp=true&sa=true&sbp=false&q=false"
+    purchaseURL:
+      "https://monsoonchocolate.square.site/product/semuliki-forest-uganda-74-dark-chocolate/101?cp=true&sa=true&sbp=false&q=false",
   },
   {
     day: 3,
     maker: "Dandelion Chocolate",
     bar: "Cahabón, Guatemala 70%",
     notes: "No longer in stock",
-    purchaseURL: "https://store.dandelionchocolate.com/products/cahabon-guatemala-70-2016-harvest-single-origin-chocolate-bar"
+    purchaseURL:
+      "https://store.dandelionchocolate.com/products/cahabon-guatemala-70-2016-harvest-single-origin-chocolate-bar",
   },
   {
     day: 4,
@@ -53,15 +55,16 @@ const DaysConfig: Day[] = [
     bar: "White Chocolate Aseeda",
     type: "White Chocolate Inclusion",
     notes: "This bar is a roasted white chocolate bar with cardamom",
-    purchaseURL: "https://caputos.com/product/mirzam-aseeda-caramelized-white-chocolate-cardamom-36/"
+    purchaseURL:
+      "https://caputos.com/product/mirzam-aseeda-caramelized-white-chocolate-cardamom-36/",
   },
   {
     day: 7,
     maker: "Pump Street",
     bar: "Peru Marñon Milk 64%",
     type: "Dark Milk",
-    notes:"Not currently in stock.",
-    purchaseURL:"https://pumpstreetchocolate.com/products/peru-mara-n-milk-64"
+    notes: "Not currently in stock.",
+    purchaseURL: "https://pumpstreetchocolate.com/products/peru-mara-n-milk-64",
   },
   {
     day: 8,
@@ -110,7 +113,7 @@ const DaysConfig: Day[] = [
     day: 14,
     maker: "Dick Taylor",
     bar: "Madagascar Milk 58%",
-    type: "Dark Milk"
+    type: "Dark Milk",
   },
   {
     day: 15,
@@ -193,24 +196,7 @@ const Card = ({ day, maker, bar, type, notes, purchaseURL }: Day) => {
     localStorage.setItem(`advent:${day}`, visible ? "true" : "");
   }, [visible]);
 
-  var hasURL = purchaseURL!=null;
-
-  if(hasURL){
-    return (
-      <div
-        className={visible ? styles.day : styles.dayHidden}
-        onClick={() => setVisible(!visible)}
-      >
-        <div className={styles.dayNumber}>{day}</div>
-        <div className={styles.dayText}>
-          <div className={styles.dayMaker}>{maker}</div>
-          <div className={styles.dayBar}><a href={purchaseURL} target="_blank">{bar}</a></div>
-          <div className={styles.dayType}>{type}</div>
-          <div className={styles.dayNotes}>{notes}</div>
-        </div>
-      </div>
-    );
-  }
+  const hasURL = purchaseURL != null;
 
   return (
     <div
@@ -220,7 +206,19 @@ const Card = ({ day, maker, bar, type, notes, purchaseURL }: Day) => {
       <div className={styles.dayNumber}>{day}</div>
       <div className={styles.dayText}>
         <div className={styles.dayMaker}>{maker}</div>
-        <div className={styles.dayBar}>{bar}</div>
+        <div className={styles.dayBar}>
+          {hasURL ? (
+            <a
+              href={purchaseURL}
+              target="_blank"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {bar}
+            </a>
+          ) : (
+            bar
+          )}
+        </div>
         <div className={styles.dayType}>{type}</div>
         <div className={styles.dayNotes}>{notes}</div>
       </div>
