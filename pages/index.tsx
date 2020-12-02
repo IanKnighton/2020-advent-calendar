@@ -11,11 +11,11 @@ type Day = {
 };
 
 const DaysConfig: Day[] = [
-  { day: 1, maker: "Solstice", bar: "Bolivia", type: "Dark Milk", notes: "" },
+  { day: 1, maker: "Solstice", bar: "Bolivia", type: "Dark Milk 56%", notes: "" },
   {
     day: 2,
     maker: "Monsoon",
-    bar: "Uganda Semiliki Forest",
+    bar: "Uganda Semiliki Forest 73%",
     notes: "Monsoon is a chocolate maker from Tucson, Ariz.",
   },
   {
@@ -25,13 +25,14 @@ const DaysConfig: Day[] = [
   },
   {
     day: 4,
-    maker: "Idilio Origins",
+    maker: "Idilio Origins 70%",
     bar: "Amazonas",
   },
   {
     day: 5,
     maker: "Areté",
     bar: "Sour Mash Whiskey",
+    type: "Inclusion",
     notes:
       'Areté Fine Chocolate is currently on hiatus — they say they\'ll "be back as soon as we possibly can!"',
   },
@@ -39,17 +40,20 @@ const DaysConfig: Day[] = [
     day: 6,
     maker: "Mirzam",
     bar: "White Chocolate Aseeda",
+    type: "White Chocolate Inclusion",
     notes: "This bar is a roasted white chocolate bar with cardamom",
   },
   {
     day: 7,
     maker: "Pump Street",
     bar: "Peru Marñon Milk 64%",
+    type: "Dark Milk",
   },
   {
     day: 8,
     maker: "Soma Chocolatemaker",
     bar: "Green Tangerine 70%",
+    type: "Inclusion",
     notes:
       "Soma is one of our favorite brands; they're based in Toronto, Canada",
   },
@@ -63,6 +67,7 @@ const DaysConfig: Day[] = [
     day: 10,
     maker: "Patric",
     bar: "Blood Orange & Cream",
+    type: "Milk Chocolate Inclusion",
     notes:
       "Patric Chocolate releases only a few bars every month. Signing up for their newsletter is the best way to find out when they're dropping a new release.",
   },
@@ -91,6 +96,7 @@ const DaysConfig: Day[] = [
     day: 14,
     maker: "Dick Taylor",
     bar: "Madagascar Milk 58%",
+    type: "Dark Milk"
   },
   {
     day: 15,
@@ -108,12 +114,14 @@ const DaysConfig: Day[] = [
     day: 17,
     maker: "Soma Chocolatemaker",
     bar: "Abstract Chocolate Science 75%",
+    type: "Inclusion",
     notes: "This inclusion goes wild with nibs",
   },
   {
     day: 18,
     maker: "Green Bean to Bar",
     bar: "Green Yuzu, Venezuela 70%",
+    type: "Inclusion",
     notes: "Another inclusion bar, the Green Yuzu has a great citrus zing.",
   },
   {
@@ -149,6 +157,7 @@ const DaysConfig: Day[] = [
     day: 24,
     maker: "Hogarth",
     bar: "Sarsparilla and Orange",
+    type: "Inclusion",
     notes:
       "This New Zealand company makes some awesome inclusions. This is a fun one.",
   },
